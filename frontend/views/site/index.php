@@ -11,7 +11,7 @@ $this->title = 'Veriph.One PHP + Yii Integration Example';
             <p class="fs-5 fw-light">This example uses PHP, Yii and Veriph.One to sign up or perform MFA using a phone number. It has an MVC architecture, but you can also implement it using an API.</p>
 
             <p>Remember to set your API Key and Secret by editing&nbsp;
-                <code>frontend/models/PhoneVerification.php</code>
+                <code>frontend/controllers/ApiController.php</code>
             </p>
 
             <p><a class="btn btn-lg btn-success" href="https://developer.veriph.one">Visit our developer website</a></p>

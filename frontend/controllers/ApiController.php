@@ -49,10 +49,10 @@ class ApiController extends Controller
                 $apiKey = self::VERIPH_ONE_API_KEY;
 
                 if (empty($apiKey)) {
-                    $errorMessage = "API Key is null, get yours at dashboard.veriph.one";
+                    $errorMessage = "API Key is empty, get yours at dashboard.veriph.one";
                     Yii::error($errorMessage, __METHOD__);
                     Yii::$app->session->setFlash('error', $errorMessage);
-                    return $this->redirect('/?error=true', 307);
+                    return $this->redirect('/', 307);
                 }
 
                 // Create a verification session by making a request to the Veriph.One API
@@ -135,10 +135,10 @@ class ApiController extends Controller
                 $secret = self::VERIPH_ONE_API_KEY_SECRET;
 
                 if (empty($apiKey) || empty($secret)) {
-                    Yii::error("API Key/Secret is null, get yours at dashboard.veriph.one", __METHOD__);
-                    return $this->asJson([
-                        'error' => "API Key/Secret has not been configured, get yours at dashboard.veriph.one"
-                    ]);
+                    $errorMessage = "API Key/Secret is empty, get yours at dashboard.veriph.one";
+                    Yii::error($errorMessage, __METHOD__);
+                    Yii::$app->session->setFlash('error', $errorMessage);
+                    return $this->redirect('/', 307);
                 }
 
                 $client = new Client();
