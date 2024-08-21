@@ -36,14 +36,17 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
+            'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
+                'GET sign-up' => 'api/sign-up',
+                'GET mfa' => 'api/auth',
+                'GET verification-result' => 'api/verification-result',
+                'GET /' => 'site/index'
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
